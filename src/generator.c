@@ -43,7 +43,7 @@ my_window_t *generate_window(void)
     my_window_t *window = malloc(sizeof(my_window_t));
     sfVideoMode mode = {1920, 1080, 32};
 
-    window->window = sfRenderWindow_create(mode, "Kill Flappy Bird", sfClose | sfFullscreen,
+    window->window = sfRenderWindow_create(mode, "Kill Flappy Bird", sfClose,
         NULL);
     window->spr = generate_object(BG, 0, 0, 0);
     return (window);
