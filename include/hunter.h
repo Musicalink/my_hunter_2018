@@ -30,6 +30,9 @@ typedef struct my_window {
 typedef struct my_game {
     my_object_t *bird;
     my_window_t *window;
+    my_object_t *life_one;
+    my_object_t *life_two;
+    my_object_t *life_three;
     sfClock *clock;
     sfTime time;
     sfMusic *music;

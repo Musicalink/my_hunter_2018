@@ -1,0 +1,6 @@
+/opt/clion/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/mcarpentier/delivery/graph/MUL_my_hunter_2018
+-- Configuring done
+CMake Error: CMake can not determine linker language for target: MUL_my_hunter_2018
+CMake Error: Cannot determine link language for target "MUL_my_hunter_2018".
+-- Generating done
+-- Build files have been written to: /home/mcarpentier/delivery/graph/MUL_my_hunter_2018/cmake-build-debug

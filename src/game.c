@@ -36,10 +36,10 @@ my_game_t *bird_pos(my_game_t *game, int t, int t2)
     game->window->spr->rect = create_IntRect(0, 1920 * t2, 1920, 1080);
     game->bird->pos.x += 15;
     if (game->bird->jumper % 13 < 8 && game->bird->pos.y > 0)
-        game->bird->pos.y -= game->score * 1.02;
+        game->bird->pos.y -= (game->score % 100) * 1.02;
     else if (game->bird->jumper % 13 < 12 && game->bird->jumper % 13 >= 8 &&
         game->bird->pos.y < 1080)
-        game->bird->pos.y += (game->score * 1.02) * 2;
+        game->bird->pos.y += (game->score % 100 * 1.02) * 2;
     game->bird->jumper++;
     if (game->bird->pos.x > 1920) {
         game->life--;
