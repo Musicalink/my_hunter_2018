@@ -8,38 +8,13 @@
 #ifndef MY_H_
 #define MY_H_
 
-#include <stdarg.h>
+void my_putchar(char c);
 
-typedef struct flag {
-    char flag;
-    int (*func)(va_list ap);
-} flag_t;
-
-int my_putchar_printf(va_list ap);
-
-int my_putchar(char c);
-
-int my_put_nbr_loop(int nb);
-
-int my_put_nbr(va_list ap);
+int my_put_nbr(int nb);
 
 int my_putstr(char const *str);
 
-char *my_strcapitalize(char *str);
-
-unsigned long my_put_unbr_loop(unsigned long nb);
-
-int my_put_unbr(va_list ap);
-
-int my_putstr_printf(va_list ap);
-
 int my_strlen(char const *str);
-
-int my_put_min_hexa(va_list ap);
-
-int my_put_maj_hexa(va_list ap);
-
-int my_put_adress(va_list ap);
 
 int my_getnbr(char const *str, int i);
 
@@ -70,25 +45,5 @@ char **remove_i_line(char **tab, int i);
 int my_atoi(char *array);
 
 int my_natoi(char *array, int n);
-
-char *convert_to_base(int i, int base);
-
-char *convert_unsigned_to_base(unsigned long i, int base);
-
-int my_putspecstr(va_list ap);
-
-int my_putbinaryunsigned(va_list ap);
-
-int my_putoctal(va_list ap);
-
-int putpercent(va_list ap);
-
-flag_t *generate_flag(char flag, int (*func)(va_list ap));
-
-flag_t **generate_flag_list(void);
-
-void loop_hi(char *s, va_list ap, int i, flag_t **flags);
-
-void my_printf(char *s, ...);
 
 #endif

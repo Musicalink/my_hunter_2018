@@ -27,6 +27,9 @@ void display(my_game_t *game)
     sfRenderWindow_drawSprite(game->window->window, game->window->spr->sprite,
         NULL);
     sfRenderWindow_drawSprite(game->window->window, game->bird->sprite, NULL);
+    sfRenderWindow_drawSprite(game->window->window, game->life_obj->sprite,
+        NULL);
+    sfRenderWindow_drawText(game->window->window, game->text, NULL);
     sfRenderWindow_display(game->window->window);
 }
 

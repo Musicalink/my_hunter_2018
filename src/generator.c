@@ -49,6 +49,23 @@ my_window_t *generate_window(void)
     return (window);
 }
 
+sfText *gen_score(void)
+{
+    sfText *text = sfText_create();
+    sfVector2f size;
+    sfVector2f pos;
+
+    size.x = 3;
+    size.y = 3;
+    pos.x = 910;
+    sfText_setString(text, "0");
+    sfText_setScale(text, size);
+    sfText_setPosition(text, pos);
+    sfFont *font = sfFont_createFromFile(FONT);
+    sfText_setFont(text, font);
+    return(text);
+}
+
 my_game_t *generate_game(void)
 {
     my_game_t *game = malloc(sizeof(my_game_t));
@@ -65,5 +82,10 @@ my_game_t *generate_game(void)
     sfMusic_play(game->music);
     sfMusic_setLoop(game->music, sfTrue);
     game->life = 3;
+    game->life_obj = generate_object(LIFE, 100, 300, 1);
+    game->life_obj->pos.x = 810;
+    game->life_obj->pos.y = 980;
+    sfSprite_setPosition(game->life_obj->sprite, game->life_obj->pos);
+    game->text = gen_score();
     return (game);
 }

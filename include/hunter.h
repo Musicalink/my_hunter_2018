@@ -30,14 +30,13 @@ typedef struct my_window {
 typedef struct my_game {
     my_object_t *bird;
     my_window_t *window;
-    my_object_t *life_one;
-    my_object_t *life_two;
-    my_object_t *life_three;
+    my_object_t *life_obj;
     sfClock *clock;
     sfTime time;
     sfMusic *music;
     sfMusic *kill;
     sfMusic *missed;
+    sfText *text;
     int score;
     int life;
 } my_game_t;
@@ -49,8 +48,12 @@ typedef struct my_game {
 #define MISSED "img/missed.ogg"
 #define LIFE "img/life.png"
 #define NOLIFE "img/nolife.png"
+#define FONT "img/font.ttf"
+
 
 sfIntRect create_IntRect(int top, int left, int width, int height);
+
+sfText *gen_score(void);
 
 my_object_t *generate_object(char *texture_path, int x, int y, int bool);
 

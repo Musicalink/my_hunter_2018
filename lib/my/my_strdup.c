@@ -11,7 +11,7 @@
 char *my_strdup(char const *src)
 {
     int length_src = my_strlen(src);
-    char *dest = malloc(sizeof(char) * length_src);
+    char *dest = malloc(sizeof(char) * length_src + 1);
     int i = 0;
 
     for (i; i < length_src; i++)

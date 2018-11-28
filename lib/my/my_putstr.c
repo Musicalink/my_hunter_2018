@@ -10,14 +10,5 @@
 
 int my_putstr(char const *str)
 {
-    write(1, str, (size_t)(my_strlen(str)));
-    return (0);
-}
-
-int my_putstr_printf(va_list ap)
-{
-    char *str = va_arg(ap, char *);
-
-    write(1, str, (size_t)(my_strlen(str)));
-    return (0);
+    return (write(1, str, my_strlen(str)));
 }

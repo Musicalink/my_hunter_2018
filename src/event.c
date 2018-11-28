@@ -6,8 +6,12 @@
 */
 
 #include "hunter.h"
+#include "my.h"
 #include <time.h>
 #include <stdlib.h>
+
+#include <stdio.h>
+#include <string.h>
 
 my_game_t *my_click_event(my_game_t *game, sfVector2f cursor, sfEvent event)
 {
@@ -21,10 +25,15 @@ my_game_t *my_click_event(my_game_t *game, sfVector2f cursor, sfEvent event)
             sfMusic_play(game->kill);
             game->score++;
             game->bird->jumper = 0;
+            sfText_setString(game->text, my_itoa(game->score));
             return (game);
         }
     game->life--;
     sfMusic_play(game->missed);
+    game->life_obj->rect = create_IntRect(0, 0, 100 * game->life, 100);
+    sfSprite_setTextureRect(game->life_obj->sprite, game->life_obj->rect);
+    game->life_obj->pos.x += 50;
+    sfSprite_setPosition(game->life_obj->sprite, game->life_obj->pos);
     return (game);
 }
 

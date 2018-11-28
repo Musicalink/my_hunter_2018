@@ -14,6 +14,8 @@ char *my_revstr(char *str)
     int i2 = my_strlen(str) - 1;
     char c;
 
+    if(my_strlen(str) == 1)
+        return (str);
     for (int i = 0; i < i2; i++) {
         c = str[i];
         str[i] = str[i2];
