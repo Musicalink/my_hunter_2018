@@ -13,8 +13,8 @@ int main(int ac, char **av)
 {
     my_game_t *game;
 
-    if(ac == 2)
-        if(my_strcmp(av[1], "-h") == 0) {
+    if (ac == 2)
+        if (my_strcmp(av[1], "-h") == 0) {
             my_putstr("Welcome to Rocket !\n");
             my_putstr("Rockets will appears on the screen !\n");
             my_putstr("You need to kill them by clicking on them !\n");
@@ -24,5 +24,6 @@ int main(int ac, char **av)
             my_putstr("Good luck and have fun !\n");
         }
     game = generate_game();
+    game->score = 0;
     game = launch_game(game);
 }
