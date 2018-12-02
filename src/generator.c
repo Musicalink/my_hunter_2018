@@ -43,8 +43,7 @@ my_window_t *generate_window(void)
     my_window_t *window = malloc(sizeof(my_window_t));
     sfVideoMode mode = {1920, 1080, 32};
 
-    window->window = sfRenderWindow_create(mode, "Kill Flappy Bird", sfClose,
-        NULL);
+    window->window = sfRenderWindow_create(mode, "Rocket", sfClose, NULL);
     window->spr = generate_object(BG, 0, 0, 0);
     return (window);
 }
@@ -63,7 +62,7 @@ sfText *gen_score(void)
     sfText_setPosition(text, pos);
     sfFont *font = sfFont_createFromFile(FONT);
     sfText_setFont(text, font);
-    return(text);
+    return (text);
 }
 
 my_game_t *generate_game(void)

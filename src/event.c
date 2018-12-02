@@ -10,9 +10,6 @@
 #include <time.h>
 #include <stdlib.h>
 
-#include <stdio.h>
-#include <string.h>
-
 my_game_t *my_click_event(my_game_t *game, sfVector2f cursor, sfEvent event)
 {
     sfVector2f pos = game->bird->pos;
